@@ -1,0 +1,5 @@
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\Entity\bin\Debug\Entity.dll
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\Entity\bin\Debug\Entity.pdb
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\Entity\obj\Debug\Entity.dll
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\Entity\obj\Debug\Entity.pdb

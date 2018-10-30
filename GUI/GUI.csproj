@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7AE82949-DE87-46C9-B52F-F35A8F665C32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMovie.Designer.cs">
+      <DependentUpon>AddMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSchedule.Designer.cs">
+      <DependentUpon>AddSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerDetail.Designer.cs">
+      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteSchedule.Designer.cs">
+      <DependentUpon>DeleteSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FailNotify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FailNotify.Designer.cs">
+      <DependentUpon>FailNotify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAdmin.Designer.cs">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMovie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageMovie.Designer.cs">
+      <DependentUpon>ManageMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageSchedule.Designer.cs">
+      <DependentUpon>ManageSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageUser.Designer.cs">
+      <DependentUpon>ManageUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PrototypeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrototypeAdmin.Designer.cs">
+      <DependentUpon>PrototypeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrototypeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrototypeUser.Designer.cs">
+      <DependentUpon>PrototypeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginUser.Designer.cs">
+      <DependentUpon>LoginUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuitingConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuitingConfirm.Designer.cs">
+      <DependentUpon>QuitingConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessNotify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuccessNotify.Designer.cs">
+      <DependentUpon>SuccessNotify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateMovie.Designer.cs">
+      <DependentUpon>UpdateMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateSchedule.Designer.cs">
+      <DependentUpon>UpdateSchedule.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddMovie.resx">
+      <DependentUpon>AddMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSchedule.resx">
+      <DependentUpon>AddSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerDetail.resx">
+      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteSchedule.resx">
+      <DependentUpon>DeleteSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FailNotify.resx">
+      <DependentUpon>FailNotify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAdmin.resx">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMovie.resx">
+      <DependentUpon>ManageMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageSchedule.resx">
+      <DependentUpon>ManageSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageUser.resx">
+      <DependentUpon>ManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PrototypeAdmin.resx">
+      <DependentUpon>PrototypeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrototypeUser.resx">
+      <DependentUpon>PrototypeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginUser.resx">
+      <DependentUpon>LoginUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuitingConfirm.resx">
+      <DependentUpon>QuitingConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuccessNotify.resx">
+      <DependentUpon>SuccessNotify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateMovie.resx">
+      <DependentUpon>UpdateMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateSchedule.resx">
+      <DependentUpon>UpdateSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{d3a28e75-b7bc-4ca2-bdd3-b111668e48c1}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{60e00337-3d4a-4c82-a014-499157b5ab6f}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

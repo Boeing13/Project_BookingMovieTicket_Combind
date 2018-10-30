@@ -1,0 +1,11 @@
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\BUS\bin\Debug\BUS.dll
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\BUS\bin\Debug\BUS.pdb
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\BUS\bin\Debug\DAL.dll
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\BUS\bin\Debug\Entity.dll
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\BUS\bin\Debug\DAL.pdb
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\BUS\bin\Debug\Entity.pdb
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\BUS\obj\Debug\BUS.csproj.CopyComplete
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\BUS\obj\Debug\BUS.dll
+E:\SAMPLE  CODE\C#\PROJECT_BookingTicket\BUS\obj\Debug\BUS.pdb

@@ -32,7 +32,7 @@ namespace DAL
         public DataTable selectBydate(String date)
         {
             SqlConnection conn = DBContext.getConnection();
-            String sql = "select m.title,m.movieID from Schedule s inner join Movie m on s.movieID = m.movieID where s.date = @date";
+            String sql = "select distinct m.title,m.movieID from Schedule s inner join Movie m on s.movieID = m.movieID where s.date = @date";
           
             SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
             adapter.SelectCommand.Parameters.Add(new SqlParameter("@date", date));

@@ -13,10 +13,14 @@ namespace DAL
     {
         public static SqlConnection getConnection()
         {
+            //return new SqlConnection(
+            //    ConfigurationManager.ConnectionStrings["BookingTicket"].ConnectionString);
 
-            return new SqlConnection(
-                ConfigurationManager.ConnectionStrings["BookingTicket"].ConnectionString);
+            string connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+            return new SqlConnection(connectionString);
 
-        }      
+        }
+
+        
     }
 }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvUsers = new System.Windows.Forms.DataGridView();
-            this.btnDetailUser = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.userID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDetailUser = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +54,37 @@
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.Size = new System.Drawing.Size(593, 345);
             this.dgvUsers.TabIndex = 2;
+            // 
+            // userID
+            // 
+            this.userID.DataPropertyName = "userID";
+            this.userID.HeaderText = "User ID";
+            this.userID.Name = "userID";
+            this.userID.ReadOnly = true;
+            // 
+            // fullName
+            // 
+            this.fullName.DataPropertyName = "fullName";
+            this.fullName.HeaderText = "Full name";
+            this.fullName.Name = "fullName";
+            this.fullName.ReadOnly = true;
+            this.fullName.Width = 150;
+            // 
+            // tel
+            // 
+            this.tel.DataPropertyName = "tel";
+            this.tel.HeaderText = "Tel";
+            this.tel.Name = "tel";
+            this.tel.ReadOnly = true;
+            this.tel.Width = 150;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            this.address.Width = 150;
             // 
             // btnDetailUser
             // 
@@ -83,40 +114,13 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.label4.Location = new System.Drawing.Point(15, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(234, 30);
+            this.label4.Size = new System.Drawing.Size(258, 33);
             this.label4.TabIndex = 9;
             this.label4.Text = "User Management";
-            // 
-            // userID
-            // 
-            this.userID.DataPropertyName = "userID";
-            this.userID.HeaderText = "User ID";
-            this.userID.Name = "userID";
-            // 
-            // fullName
-            // 
-            this.fullName.DataPropertyName = "fullName";
-            this.fullName.HeaderText = "Full name";
-            this.fullName.Name = "fullName";
-            this.fullName.Width = 150;
-            // 
-            // tel
-            // 
-            this.tel.DataPropertyName = "tel";
-            this.tel.HeaderText = "Tel";
-            this.tel.Name = "tel";
-            this.tel.Width = 150;
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Address";
-            this.address.Name = "address";
-            this.address.Width = 150;
             // 
             // ManageUser
             // 

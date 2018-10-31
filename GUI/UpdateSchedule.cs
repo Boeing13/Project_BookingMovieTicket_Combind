@@ -60,9 +60,7 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("roomDK " + roomDK + "\t" + roomID + 
-                                    "hourDK " + hourDK + "\t" + hourID +
-                                    "dateDK " + dateDK + "\t" + date);
+                    
                     Schedule schedule = new Schedule()
                     {
 

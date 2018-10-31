@@ -11,8 +11,6 @@ namespace Entity
         public int MovieID { get; set; }
         public string Title { get; set; }
         public bool State { get; set; }
-        public int genreID { get; set; }
-        public string description { get; set; }
 
         public Movie()
         {

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserHome));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.btnShow = new System.Windows.Forms.Button();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.lsMovie = new System.Windows.Forms.ListBox();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -64,6 +64,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(183, 497);
             this.panel1.TabIndex = 11;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.FlatAppearance.BorderSize = 0;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Image = ((System.Drawing.Image)(resources.GetObject("btnRegister.Image")));
+            this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegister.Location = new System.Drawing.Point(12, 226);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(169, 67);
+            this.btnRegister.TabIndex = 5;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnHistory
             // 
@@ -252,24 +269,6 @@
             this.lsMovie.Size = new System.Drawing.Size(269, 355);
             this.lsMovie.TabIndex = 27;
             this.lsMovie.SelectedIndexChanged += new System.EventHandler(this.lsMovie_SelectedIndexChanged);
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.FlatAppearance.BorderSize = 0;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Image = ((System.Drawing.Image)(resources.GetObject("btnRegister.Image")));
-            this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(12, 226);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(169, 67);
-            this.btnRegister.TabIndex = 5;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Visible = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnExit
             // 

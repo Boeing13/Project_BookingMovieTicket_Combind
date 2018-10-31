@@ -9,3 +9,9 @@ C:\Users\hieu bach\Documents\PRN292\Booking\PROJECT_BookingTicket\Entity\obj\Deb
 C:\Users\hieu bach\Documents\PRN292\Booking\PROJECT_BookingTicket\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\hieu bach\Documents\PRN292\Booking\PROJECT_BookingTicket\Entity\obj\Debug\Entity.dll
 C:\Users\hieu bach\Documents\PRN292\Booking\PROJECT_BookingTicket\Entity\obj\Debug\Entity.pdb
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\Entity\bin\Debug\Entity.dll
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\Entity\bin\Debug\Entity.pdb
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\Entity\obj\Debug\Entity.dll
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\Entity\obj\Debug\Entity.pdb

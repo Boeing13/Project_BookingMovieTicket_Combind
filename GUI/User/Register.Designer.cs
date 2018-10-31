@@ -152,6 +152,7 @@
             this.txtFullName.Size = new System.Drawing.Size(193, 20);
             this.txtFullName.TabIndex = 13;
             this.txtFullName.TextChanged += new System.EventHandler(this.maskedTextBox1_TextChanged);
+            this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullName_KeyPress);
             // 
             // Register
             // 

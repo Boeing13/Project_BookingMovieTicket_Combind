@@ -20,3 +20,14 @@ C:\Users\hieu bach\Documents\PRN292\Booking\PROJECT_BookingTicket\BUS\obj\Debug\
 C:\Users\hieu bach\Documents\PRN292\Booking\PROJECT_BookingTicket\BUS\obj\Debug\BUS.csproj.CopyComplete
 C:\Users\hieu bach\Documents\PRN292\Booking\PROJECT_BookingTicket\BUS\obj\Debug\BUS.dll
 C:\Users\hieu bach\Documents\PRN292\Booking\PROJECT_BookingTicket\BUS\obj\Debug\BUS.pdb
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\BUS\bin\Debug\BUS.dll
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\BUS\bin\Debug\BUS.pdb
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\BUS\bin\Debug\DAL.dll
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\BUS\bin\Debug\Entity.dll
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\BUS\bin\Debug\DAL.pdb
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\BUS\bin\Debug\Entity.pdb
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\BUS\obj\Debug\BUS.dll
+C:\Users\hieu bach\Documents\PRN292\TicketBooking\Project_BookingMovieTicket_Combind\BUS\obj\Debug\BUS.pdb

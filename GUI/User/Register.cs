@@ -69,7 +69,20 @@ namespace GUI.User
             if (!System.Text.RegularExpressions.Regex.IsMatch(txtFullName.Text, "^[a-zA-Z ]"))
             {
                 MessageBox.Show("This textbox accepts only alphabetical characters");
-                txtFullName.Text.Remove(txtFullName.Text.Length - 1);
+                txtFullName.Text = "";
+            }
+        }
+
+        private void txtFullName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           char temp= e.KeyChar;
+            if(temp>=65&&temp<=90 || temp >= 97 && temp <= 122 || temp==8 || temp == 32)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

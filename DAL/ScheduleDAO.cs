@@ -147,9 +147,9 @@ namespace DAL
             parameters[2] = new SqlParameter("@date", schedule.Date);
             parameters[3] = new SqlParameter("@movieID", schedule.MovieID);
             parameters[4] = new SqlParameter("@leftSeat", schedule.LeftSeat);
-            parameters[5] = new SqlParameter("@roomID", roomID);
-            parameters[6] = new SqlParameter("@hourID", hourID);
-            parameters[7] = new SqlParameter("@date", date);
+            parameters[5] = new SqlParameter("@roomDK", roomID);
+            parameters[6] = new SqlParameter("@hourDK", hourID);
+            parameters[7] = new SqlParameter("@dateDK", date);
             return SqlHelper.ExecuteNonQuery(query, CommandType.Text, parameters);
         }
         

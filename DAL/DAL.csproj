@@ -45,6 +45,8 @@
     <Compile Include="DBContext.cs" />
     <Compile Include="MovieDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleDAO.cs" />
+    <Compile Include="SqlHelper.cs" />
     <Compile Include="UserDAO.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +54,9 @@
       <Project>{60e00337-3d4a-4c82-a014-499157b5ab6f}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

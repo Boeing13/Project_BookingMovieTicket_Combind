@@ -15,7 +15,7 @@ namespace GUI
 {
     public partial class ManageUser : UserControl
     {
-        UserBUS ub = new UserBUS();
+        H_User ub = new H_User();
        
         public ManageUser()
         {
@@ -29,7 +29,7 @@ namespace GUI
             try
             {
                 DataTable dt = new DataTable();
-                dt = ub.GetAllUser();
+                dt = ub.SelectAll();
                 dgvUsers.DataSource = dt;
             }
             catch (Exception)

@@ -47,53 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddMovie.cs">
-      <SubType>Form</SubType>
+    <Compile Include="BookingTicketDataSet.cs">
+      <DependentUpon>BookingTicketDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="AddMovie.Designer.cs">
-      <DependentUpon>AddMovie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddSchedule.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddSchedule.Designer.cs">
-      <DependentUpon>AddSchedule.cs</DependentUpon>
+    <Compile Include="BookingTicketDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingTicketDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CustomerDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerDetail.Designer.cs">
       <DependentUpon>CustomerDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteSchedule.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeleteSchedule.Designer.cs">
-      <DependentUpon>DeleteSchedule.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FailNotify.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FailNotify.Designer.cs">
-      <DependentUpon>FailNotify.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoginAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoginAdmin.Designer.cs">
-      <DependentUpon>LoginAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManageMovie.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ManageMovie.Designer.cs">
-      <DependentUpon>ManageMovie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManageSchedule.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ManageSchedule.Designer.cs">
-      <DependentUpon>ManageSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageUser.cs">
       <SubType>UserControl</SubType>
@@ -103,23 +69,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PrototypeAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PrototypeAdmin.Designer.cs">
-      <DependentUpon>PrototypeAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="PrototypeUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PrototypeUser.Designer.cs">
       <DependentUpon>PrototypeUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginUser.cs">
+    <Compile Include="User\History.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginUser.Designer.cs">
+    <Compile Include="User\History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\LoginUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\.Designer.cs">
       <DependentUpon>LoginUser.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuitingConfirm.cs">
       <SubType>Form</SubType>
@@ -127,47 +94,32 @@
     <Compile Include="QuitingConfirm.Designer.cs">
       <DependentUpon>QuitingConfirm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SuccessNotify.cs">
+    <Compile Include="User\Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SuccessNotify.Designer.cs">
-      <DependentUpon>SuccessNotify.cs</DependentUpon>
+    <Compile Include="User\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateMovie.cs">
+    <Compile Include="User\UserDetailTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateMovie.Designer.cs">
-      <DependentUpon>UpdateMovie.cs</DependentUpon>
+    <Compile Include="User\UserDetailTicket.Designer.cs">
+      <DependentUpon>UserDetailTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateSchedule.cs">
+    <Compile Include="User\UserHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateSchedule.Designer.cs">
-      <DependentUpon>UpdateSchedule.cs</DependentUpon>
+    <Compile Include="User\UserHome.Designer.cs">
+      <DependentUpon>UserHome.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddMovie.resx">
-      <DependentUpon>AddMovie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddSchedule.resx">
-      <DependentUpon>AddSchedule.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="User\UserOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserOrder.Designer.cs">
+      <DependentUpon>UserOrder.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomerDetail.resx">
       <DependentUpon>CustomerDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DeleteSchedule.resx">
-      <DependentUpon>DeleteSchedule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FailNotify.resx">
-      <DependentUpon>FailNotify.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginAdmin.resx">
-      <DependentUpon>LoginAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageMovie.resx">
-      <DependentUpon>ManageMovie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageSchedule.resx">
-      <DependentUpon>ManageSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageUser.resx">
       <DependentUpon>ManageUser.cs</DependentUpon>
@@ -181,27 +133,41 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PrototypeAdmin.resx">
-      <DependentUpon>PrototypeAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PrototypeUser.resx">
       <DependentUpon>PrototypeUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginUser.resx">
+    <EmbeddedResource Include="User\History.resx">
+      <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\LoginUser.resx">
       <DependentUpon>LoginUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuitingConfirm.resx">
       <DependentUpon>QuitingConfirm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SuccessNotify.resx">
-      <DependentUpon>SuccessNotify.cs</DependentUpon>
+    <EmbeddedResource Include="User\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateMovie.resx">
-      <DependentUpon>UpdateMovie.cs</DependentUpon>
+    <EmbeddedResource Include="User\UserDetailTicket.resx">
+      <DependentUpon>UserDetailTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateSchedule.resx">
-      <DependentUpon>UpdateSchedule.cs</DependentUpon>
+    <EmbeddedResource Include="User\UserHome.resx">
+      <DependentUpon>UserHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\UserOrder.resx">
+      <DependentUpon>UserOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BookingTicketDataSet.xsc">
+      <DependentUpon>BookingTicketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookingTicketDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookingTicketDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookingTicketDataSet.xss">
+      <DependentUpon>BookingTicketDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

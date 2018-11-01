@@ -23,13 +23,12 @@ namespace GUI
         {
             try
             {
-                DataTable dt = new DataTable();
-                dt = mb.SelectAll();
-                dgvMovies.DataSource = dt;
+                cmbState.SelectedIndex = 0;
+                LoadData();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -37,20 +36,44 @@ namespace GUI
         {
             if (dgvMovies.SelectedCells.Count > 0)
             {
-                int rowindex = dgvMovies.CurrentCell.RowIndex;
-                string id = dgvMovies.Rows[rowindex].Cells[0].Value.ToString();
-                string title = dgvMovies.Rows[rowindex].Cells[1].Value.ToString();
-                string state = dgvMovies.Rows[rowindex].Cells[2].Value.ToString();
-                
-                UpdateMovie detail = new UpdateMovie(id, title, state);
+                UpdateMovie detail = new UpdateMovie(this);
                 detail.ShowDialog();
             }
         }
 
         private void btnAddMovie_Click(object sender, EventArgs e)
         {
-            AddMovie add = new AddMovie();
-            add.Show();
+            AddMovie add = new AddMovie(this);
+            add.ShowDialog();
+        }
+
+        private void btnDeleteMovie_Click(object sender, EventArgs e)
+        {
+            DeleteMovie delete = new DeleteMovie(this);
+            delete.ShowDialog();                       
+        }
+
+        public void LoadData()
+        {
+            bool state = true;
+            if (cmbState.SelectedIndex == 1) state = false;
+            DataTable dt = new DataTable();
+            dt = mb.GetMoviesByState(state);
+            dgvMovies.DataSource = dt;
+        }
+
+        private void cmbState_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cmbState.SelectedIndex == 1)
+            {
+                btnDeleteMovie.Enabled = false;
+                LoadData();
+            }
+            else
+            {
+                btnDeleteMovie.Enabled = true;
+                LoadData();
+            }
         }
     }
 }

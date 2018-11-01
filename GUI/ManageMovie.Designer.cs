@@ -37,6 +37,7 @@
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.state = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbState = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovies)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@
             this.btnDeleteMovie.TabIndex = 12;
             this.btnDeleteMovie.Text = "Delete";
             this.btnDeleteMovie.UseVisualStyleBackColor = false;
+            this.btnDeleteMovie.Click += new System.EventHandler(this.btnDeleteMovie_Click);
             // 
             // btnUpdateMovie
             // 
@@ -95,6 +97,7 @@
             // dgvMovies
             // 
             this.dgvMovies.AllowUserToAddRows = false;
+            this.dgvMovies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMovies.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvMovies.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -114,7 +117,6 @@
             this.movieID.HeaderText = "Movie ID";
             this.movieID.Name = "movieID";
             this.movieID.ReadOnly = true;
-            this.movieID.Width = 150;
             // 
             // title
             // 
@@ -122,7 +124,6 @@
             this.title.HeaderText = "Movie name";
             this.title.Name = "title";
             this.title.ReadOnly = true;
-            this.title.Width = 200;
             // 
             // state
             // 
@@ -132,7 +133,6 @@
             this.state.ReadOnly = true;
             this.state.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.state.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.state.Width = 150;
             // 
             // label3
             // 
@@ -145,10 +145,24 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "List of all Movies";
             // 
+            // cmbState
+            // 
+            this.cmbState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbState.FormattingEnabled = true;
+            this.cmbState.Items.AddRange(new object[] {
+            "On showing",
+            "Finished"});
+            this.cmbState.Location = new System.Drawing.Point(218, 66);
+            this.cmbState.Name = "cmbState";
+            this.cmbState.Size = new System.Drawing.Size(121, 21);
+            this.cmbState.TabIndex = 14;
+            this.cmbState.SelectedValueChanged += new System.EventHandler(this.cmbState_SelectedValueChanged);
+            // 
             // ManageMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbState);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnDeleteMovie);
             this.Controls.Add(this.btnUpdateMovie);
@@ -170,10 +184,11 @@
         private System.Windows.Forms.Button btnDeleteMovie;
         private System.Windows.Forms.Button btnUpdateMovie;
         private System.Windows.Forms.Button btnAddMovie;
-        private System.Windows.Forms.DataGridView dgvMovies;
         private System.Windows.Forms.DataGridViewTextBoxColumn movieID;
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.DataGridViewCheckBoxColumn state;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.DataGridView dgvMovies;
+        private System.Windows.Forms.ComboBox cmbState;
     }
 }

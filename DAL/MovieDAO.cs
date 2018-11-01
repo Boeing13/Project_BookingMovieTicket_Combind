@@ -5,256 +5,153 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using Entity;
+
 namespace DAL
 {
     public class MovieDAO
     {
-        public DataTable GetTable(string query)
+
+        public DataTable GetMoviesByState(bool state)
         {
-            SqlConnection conn = DBContext.getConnection();
-            SqlDataAdapter da = new SqlDataAdapter(query, conn);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
+            string query = "select * from Movie where state = @state";
+            SqlParameter parameter = new SqlParameter("@state", state);
+            return SqlHelper.ExecuteDataTable(query, CommandType.Text, parameter);
         }
 
-
-        public void NonExecuteQuery(string query)
+        public DataTable GetAllGenres()
         {
-            SqlConnection conn = new SqlConnection();
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            cmd.Clone();
+            string query = "select * from Genres";
+            return SqlHelper.ExecuteDataTable(query, CommandType.Text, null);
         }
 
-        public DataTable selectBydate(String date)
+        public string GetGenreName(int genreID)
         {
-            SqlConnection conn = DBContext.getConnection();
-            String sql = "select distinct m.title,m.movieID from Schedule s inner join Movie m on s.movieID = m.movieID where s.date = @date";
-          
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
-            adapter.SelectCommand.Parameters.Add(new SqlParameter("@date", date));
-
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            return dt;
-        }
-
-        public DataTable getSelectedTimeByDateAndMID(string date, int mid)
-        {
-            string sql = "select h.hourID,h.time from Schedule s \n"
-                        + " inner join Hour h on s.hourID = h.hourID  where date=@date and movieID=@mid and leftSeat>0";
-            SqlConnection conn= DBContext.getConnection();
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
-            adapter.SelectCommand.Parameters.Add(new SqlParameter("@date", date));
-            adapter.SelectCommand.Parameters.Add(new SqlParameter("@mid", mid));
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            return dt;
-        }
-
-       
-        public string getMovieGenre(int mid)
-        {
-            string str = "";
-            string sql = "select genreName from movie m \n"
-                        + "inner join genres g on m.genreID = g.genreID \n"
-                        + "where m.movieID = @mid";
-            
-            using (SqlConnection conn = DBContext.getConnection())
+            string genreName = "";
+            string query = "select genreName from Genres where genreID = @genreID";
+            SqlDataReader reader = SqlHelper.ExecuteReader(
+               query, CommandType.Text, new SqlParameter("@genreID", genreID));
+            if (reader.HasRows)
             {
-                conn.Open();
-                SqlCommand command = new SqlCommand(sql, conn);
-                command.Parameters.AddWithValue("@mid", mid);
-                SqlDataReader read = command.ExecuteReader();
-                while (read.Read())
+                if (reader.Read())
                 {
-                    str = read.GetString(0);
-                    break;
+                    genreName = reader.GetString(0);
+
                 }
             }
-            return str;
+            return genreName;
         }
 
-        public string getDescription(int mid)
+        public Movie GetMovieByID(int movieID)
         {
-            string str = "";
-            string sql = "select * from Movie where movieID=@mid";
-            using (SqlConnection conn = DBContext.getConnection())
+            Movie movie = new Movie();
+            string query = "select * from Movie where movieID = @movieID";
+            SqlDataReader reader = SqlHelper.ExecuteReader(query, CommandType.Text, 
+                new SqlParameter("movieID", movieID));
+            if (reader.HasRows)
             {
-                conn.Open();
-                SqlCommand command = new SqlCommand(sql, conn);
-                command.Parameters.AddWithValue("@mid", mid);
-                SqlDataReader read = command.ExecuteReader();
-
-                while (read.Read())
+                if (reader.Read())
                 {
-                    str = read.GetString(4);
-                    break;
-                }
-
-            }
-            return str;
-        }
-
-        public DataTable getType()
-        {
-            string sql = "select * from Type";
-            SqlConnection conn = DBContext.getConnection();
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            return dt;
-        }
-
-        public int getRoomID(int movieID,int hid, DateTime dateTime, int seats)
-        {
-            int number=-1;
-            int seatTotal = 0;
-            string sql = "select * from Schedule where movieID=@mid and date=@date and hourID=@hid and leftSeat>=@seats order by leftSeat asc";
-            using (SqlConnection conn = DBContext.getConnection())
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand(sql,conn);
-                command.CommandType = CommandType.Text;
-                command.Parameters.AddWithValue("@mid", movieID);
-                command.Parameters.AddWithValue("@date", dateTime);
-                command.Parameters.AddWithValue("@hid", hid);
-                command.Parameters.AddWithValue("@seats", seats);
-                SqlDataReader read= command.ExecuteReader();
-               
-                while (read.Read())
-                {
-                    number = read.GetInt32(0);
-                    break;
-                }
-                
-            }
-            return number;
-        }
-
-        public int booKTickets(int rid,int hid,DateTime dateTime,int seat)
-        {
-            string sql = "update Schedule set leftseat=@seat where roomID=@rid and hourID=@hid and date=@date";
-            int result = 0;
-            using (SqlConnection conn = DBContext.getConnection())
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand(sql, conn);
-                command.CommandType = CommandType.Text;
-                command.Parameters.AddWithValue("@rid", rid);
-                command.Parameters.AddWithValue("@hid", hid);
-                command.Parameters.AddWithValue("@seat", seat);
-                command.Parameters.AddWithValue("@date", dateTime);
-               result= command.ExecuteNonQuery();
-            }
-            return result;
-        }
-
-        public double getPrice(int gid)
-        {
-            string sql = "select * from Type where typeID= @gid";
-            double price=0;
-            using (SqlConnection conn = DBContext.getConnection())
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand(sql, conn);
-                command.Parameters.AddWithValue("@gid", gid);
-               SqlDataReader read =  command.ExecuteReader();
-                while (read.Read())
-                {
-                    price = read.GetDouble(2);
+                    string title = reader.GetString(1);
+                    bool state = reader.GetBoolean(2);
+                    int genreID = reader.GetInt32(3);
+                    string description = reader.GetString(4);
+                    movie = new Movie(movieID, title, state, genreID, description);
                 }
             }
-            return price;
+            return movie;
         }
 
-        public int getNumberOfTickets(int rid, int hid, DateTime dateTime)
+        public int InsertNewMovie(string title, bool state, int genreID, string description)
         {
-            int seatTotal = 0;
-            string sql = "select * from Schedule where roomID=@rid and hourID=@hid and date=@date";
-            using (SqlConnection conn = DBContext.getConnection())
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand(sql, conn);
-                command.CommandType = CommandType.Text;
-                command.Parameters.AddWithValue("@rid", rid);
-                command.Parameters.AddWithValue("@hid", hid);
-                command.Parameters.AddWithValue("@date", dateTime);
-                SqlDataReader read = command.ExecuteReader();
+            string query = "insert into Movie(title, [state], genreID, [description]) " +
+                "values(@title,@state, @genreID, @description)";
+            SqlParameter[] parameters = new SqlParameter[4];
+            parameters[0] = new SqlParameter("@title", title);
+            parameters[1] = new SqlParameter("@state", state);
+            parameters[2] = new SqlParameter("@genreID", genreID);
+            parameters[3] = new SqlParameter("@description", description);
+            return SqlHelper.ExecuteNonQuery(query, CommandType.Text, parameters);
+        }
 
-                while (read.Read())
+        public int UpdateMovie(Movie movie, int movieID)
+        {
+            string query = "UPDATE Movie SET title = @title, [state] = @state, " +
+                "genreID = @genreID, [description] = @description where movieID = @movieID";
+            SqlParameter[] parameters = new SqlParameter[5];
+            parameters[0] = new SqlParameter("@title", movie.Title);
+            parameters[1] = new SqlParameter("@state", movie.State);
+            parameters[2] = new SqlParameter("@genreID", movie.GenreID);
+            parameters[3] = new SqlParameter("@description", movie.Description);
+            parameters[4] = new SqlParameter("@movieID", movieID);
+            return SqlHelper.ExecuteNonQuery(query, CommandType.Text, parameters);
+        }
+
+        public bool CheckDuplicate(string title, bool state, int genreID, string description)
+        {
+            int stt = 0;
+            if (state) stt = 1;
+            SqlParameter[] parameters = new SqlParameter[4];
+            string query = "select * from Movie " +
+                "where title = @title and state = @state and genreID = @genreID " +
+                "and description = @description";
+            parameters[0] = new SqlParameter("@title", title);
+            parameters[1] = new SqlParameter("@state", stt);
+            parameters[2] = new SqlParameter("@genreID", genreID);
+            parameters[3] = new SqlParameter("@description", description);
+            SqlDataReader reader = SqlHelper.ExecuteReader(query, CommandType.Text, parameters);
+            int row = 0;
+            if (reader.HasRows)
+            {
+                if (reader.Read())
                 {
-                    seatTotal = read.GetInt32(4);
-                    break;
+                    row = reader.GetInt32(0);
                 }
-
             }
-            return seatTotal;
+            if (row > 0)
+            {
+                return true;
+            }
+            else
+                return false;
         }
 
-        public string getRoomName(int rid)
+        public bool IsDuplicateMovie(Movie movie)
         {
-            string sql = "select * from Room where roomID=@rid";
-            string roomName = "";
-            using (SqlConnection conn = DBContext.getConnection())
+            List<Movie> list = new List<Movie>();
+            string query = "select * from Movie " +
+                "where title = @title and state = @state and genreID = @genreID " +
+                "and description = @description";
+            SqlParameter[] parameters = new SqlParameter[4];
+            parameters[0] = new SqlParameter("@title", movie.Title);
+            parameters[1] = new SqlParameter("@state", movie.State);
+            parameters[2] = new SqlParameter("@genreID", movie.GenreID);
+            parameters[3] = new SqlParameter("@description", movie.Description);
+            SqlDataReader reader = SqlHelper.ExecuteReader(query, CommandType.Text, parameters);
+            if (reader.HasRows)
             {
-                conn.Open();
-                SqlCommand command = new SqlCommand(sql, conn);
-                command.CommandType = CommandType.Text;
-                command.Parameters.AddWithValue("@rid", rid);
-                SqlDataReader read = command.ExecuteReader();
-
-                while (read.Read())
+                if (reader.Read())
                 {
-                    roomName = read.GetString(1);
-                    break;
+                    int movieID = reader.GetInt32(0);
+                    string title = reader.GetString(1);
+                    bool state = reader.GetBoolean(2);
+                    int genreID = reader.GetInt32(3);
+                    string description = reader.GetString(4);
+                    if (movieID != movie.MovieID)
+                    {
+                        Movie dmovie = new Movie(movieID, title, state, genreID, description);
+                        list.Add(dmovie);
+                    }
+                    
                 }
-
             }
-            return roomName;
-        }
-
-        public int inserInBookingHistory(int uid, int mid, int typeID, int hid, DateTime dateTime, int quantity)
-        {
-            string sql = "insert into BookingHistory values(@uid,@mid,@typeID,@hid,@date,@quantity)";
-            int result = 0;
-            using (SqlConnection conn = DBContext.getConnection())
+            if(list.Count > 0)
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(sql,conn);
-                cmd.Parameters.AddWithValue("@uid", uid);
-                cmd.Parameters.AddWithValue("@mid", mid);
-                cmd.Parameters.AddWithValue("@typeID", typeID);
-                cmd.Parameters.AddWithValue("@hid", hid);
-                cmd.Parameters.AddWithValue("@date", dateTime);
-                cmd.Parameters.AddWithValue("@quantity", quantity);
-               result= cmd.ExecuteNonQuery();
+                return true;
             }
-            return result;
-
+            return false;
         }
 
-        public DataTable getBookingHistory(int id)
-        {
-            DataTable dt = new DataTable();
-            string sql = "select m.title, g.genreName,t.name,bh.bookedDate,h.time,t.price,bh.quantity,(t.price*bh.quantity) as 'total' from BookingHistory bh "
-                        + " inner join Movie m on bh.movieID = m.movieID"
-                        + " inner join[Type] t on t.typeID = bh.typeID"
-                        + " inner join Hour h on h.hourID = bh.hourID"
-                        + " inner join Genres g on g.genreID = m.genreID"
-                        + " where bh.userID=@id";
-            using (SqlConnection conn = DBContext.getConnection())
-            {
-                SqlDataAdapter adap = new SqlDataAdapter(sql, conn);
-                adap.SelectCommand.Parameters.AddWithValue("@id", id);
-                adap.Fill(dt);
-            }
-            return dt;
-
-        }
 
     }
 }
